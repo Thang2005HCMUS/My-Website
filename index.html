@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đại số tuyến tính</title>
+    <script type="text/javascript" async
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <h2 style = "text-align: center;">Chứng minh rằng 1 ma trận đối xứng thực thì chéo hóa được</h2>
+    <footer style = "text-align: center;">
+        <p>Đoàn Quang Thắng</p>
+        <p>Khoa CNTT , Trường đại học Khoa Học Tự Nhiên , DHQG - TPHCM</p>
+    </footer>
+    <h3 style="text-align: center;">Chứng minh </h3>
+    <p> <b>Bổ đề 1 : </b> xét A là 1 ma trận đối xứng thực khi đó mọi giá trị riêng của A là số thực</p>
+    <h4 style="text-align: center;">Chứng minh </h4>
+    <p> gọi \(\lambda_1\) là 1 giá trị riêng của A và \(v_1\) là vector riêng của A ứng với 
+        \(\lambda_1\)  </p>
+    <p>ta có \(Av_1 = \lambda_1v_1\) , lấy liên hợp sau đó lấy chuyển vị 2 vế ta có
+         \(\bar{v_1}^T\bar{A}^T = \bar{\lambda_1}\bar{v_1}^T\) vì A đối xứng thực nên \(\bar{A}^T = A\), từ đây suy ra</p>
+    
+    $$\bar{\lambda_1}\bar{v_1}^TAv_1 = \bar{v_1}^TA\lambda_1v_1$$ hay 
+    $$\bar{\lambda_1}\bar{v_1}^TAv_1 = \lambda_1\bar{v_1}^TAv_1$$ suy ra \(\lambda_1 = \bar{\lambda_1} \) nên \(\lambda_1\) là số thực
+    <p> <b>Bổ đề 2 </b> xét A là 1 ma trận đối xứng thực khi đó các không gian riêng của A trực giao với nhau </p>
+    <h4 style="text-align: center;">Chứng minh </h4>
+    giả sử \(\lambda_1\) và \(\lambda_2\) lần lượt là 2 giá trị riêng phân biệt của A và \(v_1\) và \(v_2\) lần lượt là 2 vector riêng ứng với 
+    \(\lambda_1\) và \(\lambda_2\), vì A đối xứng thực nên 
+    ta có 
+    $$v_1^TAv_2 = v_2^TAv_1 $$
+    hay 
+    $$v_1^T\lambda_2v_2 = v_2^T\lambda_1v_1 $$
+    $$\Leftrightarrow \lambda_2v_1^Tv_2 = \lambda_1v_2^Tv_1 $$
+    $$\Leftrightarrow \lambda_2\langle v_1, v_2\rangle = \lambda_1 \langle v_1,v_2 \rangle $$
+    vì \(\lambda_1 \neq \lambda_2\) suy ra 
+    $$\langle v_1,v_2 \rangle = 0$$ suy ra dpcm <br>
+Quay trở lại bài toán , chúng ta sẽ chứng minh bằng quy nạp rằng, ma trận A đối xứng thực \(n \times n (n >0)\) chéo hóa dc
+, với n = 1, hiển nhiên đúng, giả sử mệnh đề đúng với \(n =k \geq 1\), xét \(n = k+1\) , gọi \(\lambda_1\) là 1 giá trị riêng của A và 
+\(v_1\) là 1 vector riêng có norm bằng 1 ứng với \(\lambda_1\) và \(W = \{v_1\}^{\perp}\), với mọi \(u \in W \) ta có \(\langle u,v \rangle = 0\) 
+và 
+$$u^TAv_1 = v_1^TAu = u^T\lambda_1v_1 = \lambda_1u^Tv_1 = 0$$
+</body>
+gọi S là ma trận gồm các vector cột là cơ sở trực giao của W , xét ma trận $$X = (S , v_1)$$
+kí hiệu \(Z_n \) là vector 0 n chiều 
+ta có $$S^Tv = Z_{n-1}$$
+ta có $$X^TAX = \begin{pmatrix}
+S^T\\
+v_1^T
+\end{pmatrix} 
+A
+\begin{pmatrix}
+S,v_1
+\end{pmatrix} = \begin{pmatrix}
+S^TAS & S^TAv_1\\
+v_1^TAS & v1^TAv_1
+\end{pmatrix} = \begin{pmatrix}
+S^TAS & Z_{n-1}\\
+Z_{n-1}^T & \lambda_1
+\end{pmatrix}$$
+ta chỉ cần chứng minh tồn tại 1 ma trận S thỏa mãn \(S^TAS\) là 1 ma trận đường chéo (1) , thật vậy 
+, đặt  \(B = S^TAS\) dễ dàng chứng minh \(B\)  là 1 ma trận đối xứng thực cấp \(n-1\) nên tồn tại 1 ma trận U đường chéo cấp \(n-1\) và ma trận trực giao Y sao cho
+$$B = YUY^T$$ 
+xét \(S_1 = SY\) ta có 
+$$S_1^TAS_1 = (SY)^TA(SY) = Y^T(S^TAS)Y = Y^TAY = U$$ là 1 ma trận đường chéo, suy ra tồn tại 1 ma trận thỏa mãn (1), đặt 
+\(X_1 = (S_1,v_1)\) ta có 
+$$X_1^TAX_1 = \begin{pmatrix}
+X_1^T\\
+v_1^T
+\end{pmatrix} 
+A
+\begin{pmatrix}
+X_1,v_1
+\end{pmatrix} = \begin{pmatrix}
+X_1^TAS & X_1^TAv_1\\
+v_1^TAX_1 & v1^TAv_1
+\end{pmatrix} = \begin{pmatrix}
+X_1^TAX_1 & Z_{n-1}\\
+Z_{n-1}^T & \lambda_1
+\end{pmatrix} = \begin{pmatrix}
+U & Z_{n-1}\\
+Z_{n-1}^T & \lambda_1
+\end{pmatrix}$$
+là 1 ma trận đường chéo cấp \(n\) vậy A chéo hóa được , theo nguyên lý quy nạp suy ra dpcm
+</html>
