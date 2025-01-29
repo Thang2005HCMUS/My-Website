@@ -67,17 +67,17 @@ xét \(S_1 = SY\) ta có
 $$S_1^TAS_1 = (SY)^TA(SY) = Y^T(S^TAS)Y = Y^TAY = U$$ là 1 ma trận đường chéo, suy ra tồn tại 1 ma trận thỏa mãn (1), đặt 
 \(X_1 = (S_1,v_1)\) ta có 
 $$X_1^TAX_1 = \begin{pmatrix}
-X_1^T\\
+S_1^T\\
 v_1^T
 \end{pmatrix} 
 A
 \begin{pmatrix}
-X_1,v_1
+S_1,v_1
 \end{pmatrix} = \begin{pmatrix}
-X_1^TAS & X_1^TAv_1\\
-v_1^TAX_1 & v1^TAv_1
+S_1^TAS & S_1^TAv_1\\
+v_1^TAS_1 & v_1^TAv_1
 \end{pmatrix} = \begin{pmatrix}
-X_1^TAX_1 & Z_{n-1}\\
+S_1^TAS_1 & Z_{n-1}\\
 Z_{n-1}^T & \lambda_1
 \end{pmatrix} = \begin{pmatrix}
 U & Z_{n-1}\\
